@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FF VIP Proxy</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    color:white;
+    background:#050505;
+    overflow-x:hidden;
+}
+
+/* GAMING BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    inset:-20px;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.65),
+            rgba(0,0,0,.88)
+        ),
+        url("logo.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    filter:blur(10px);
+
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0%,
+            rgba(255,0,0,.15) 100%
+        );
+
+    z-index:-1;
+}
+
+
+/* MAIN BOX */
+
+.container{
+    width:92%;
+    max-width:430px;
+
+    margin:30px auto;
+    padding:30px 22px;
+
+    text-align:center;
+
+    background:rgba(5,5,5,.82);
+
+    border:1px solid rgba(255,0,0,.5);
+
+    border-radius:25px;
+
+    box-shadow:
+        0 0 30px rgba(255,0,0,.25),
+        0 20px 60px rgba(0,0,0,.8);
+
+    backdrop-filter:blur(12px);
+}
+
+
+/* LOGO */
+
+.logo{
+    width:120px;
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid #ff1616;
+
+    box-shadow:
+        0 0 15px red,
+        0 0 40px rgba(255,0,0,.6);
+
+    margin-bottom:18px;
+}
+
+
+/* TITLE */
+
+h1{
+    font-size:28px;
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    text-shadow:
+        0 0 10px red,
+        0 0 25px red;
+}
+
+.subtitle{
+    margin-top:8px;
+    margin-bottom:25px;
+
+    color:#ccc;
+
+    font-size:14px;
+}
+
+
+/* PROGRESS */
+
+.steps{
+    display:flex;
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+}
+
+.step{
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:#333;
+}
+
+.step.done{
+    background:#00ff66;
+
+    box-shadow:
+        0 0 10px #00ff66;
+}
+
+
+/* BUTTON */
+
+.btn{
+    width:100%;
+
+    min-height:58px;
+
+    margin:14px 0;
+
+    border:none;
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.btn:hover{
+    transform:scale(1.03);
+}
+
+
+/* YOUTUBE */
+
+.youtube{
+    background:
+        linear-gradient(
+            135deg,
+            #ff0000,
+            #a90000
+        );
+
+    box-shadow:
+        0 5px 20px rgba(255,0,0,.35);
+}
+
+
+/* TELEGRAM */
+
+.telegram{
+    background:
+        linear-gradient(
+            135deg,
+            #229ed9,
+            #087db3
+        );
+
+    box-shadow:
+        0 5px 20px rgba(0,150,255,.3);
+}
+
+
+/* VIP */
+
+.vip{
+    background:
+        linear-gradient(
+            135deg,
+            #ff1a1a,
+            #850000
+        );
+
+    box-shadow:
+        0 5px 25px rgba(255,0,0,.4);
+}
+
+
+/* LOCKED VIP */
+
+.vip.locked{
+    background:
+        linear-gradient(
+            135deg,
+            #292929,
+            #111
+        );
+
+    color:#777;
+
+    border:1px solid #333;
+
+    box-shadow:none;
+
+    cursor:not-allowed;
+}
+
+
+/* STATUS */
+
+.status{
+    margin-top:18px;
+
+    padding:13px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#aaa;
+
+    font-size:13px;
+
+    line-height:1.5;
+}
+
+
+/* FOOTER */
+
+.footer{
+    margin-top:25px;
+
+    color:#666;
+
+    font-size:11px;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <!-- LOGO -->
+    <img src="logo.jpg" class="logo">
+
+
+    <h1>OLD FF 2022</h1>
+
+    <p class="subtitle">
+        Complete both steps and unlock OLD 🔥
+    </p>
+
+
+    <!-- PROGRESS -->
+
+    <div class="steps">
+
+        <div id="step1" class="step"></div>
+
+        <div id="step2" class="step"></div>
+
+        <div id="step3" class="step"></div>
+
+    </div>
+
+
+    <!-- YOUTUBE BUTTON -->
+
+    <a
+        class="btn youtube"
+        href="https://youtube.com/@adivashigmr-q3j?si=zoCQrdRWOCi82Gt3"
+        target="_blank"
+        onclick="youtubeDone()"
+    >
+
+        ▶️ SUBSCRIBE ON YOUTUBE
+
+    </a>
+
+
+    <!-- TELEGRAM BUTTON -->
+
+    <a
+        class="btn telegram"
+        href="https://t.me/+qXJtyvhfrTk5NWI1"
+        target="_blank"
+        onclick="telegramDone()"
+    >
+
+        ✈️ JOIN TELEGRAM
+
+    </a>
+
+
+    <!-- VIP BUTTON -->
+
+    <button
+        id="vipButton"
+        class="btn vip locked"
+        onclick="openVIP()"
+    >
+
+        🔒 OLD FF SERVER
+
+    </button>
+
+
+    <!-- STATUS -->
+
+    <div id="status" class="status">
+
+        🔒 Pehle YouTube aur Telegram dono complete karo.
+
+    </div>
+
+
+    <div class="footer">
+
+        © 2022 FF OLD SERVER
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* STATUS */
+
+let youtube = false;
+let telegram = false;
+
+
+/* YOUTUBE */
+
+function youtubeDone(){
+
+    youtube = true;
+
+    document
+        .getElementById("step1")
+        .classList.add("done");
+
+    checkUnlock();
+}
+
+
+/* TELEGRAM */
+
+function telegramDone(){
+
+    telegram = true;
+
+    document
+        .getElementById("step2")
+        .classList.add("done");
+
+    checkUnlock();
+}
+
+
+/* CHECK */
+
+function checkUnlock(){
+
+    const vip =
+        document.getElementById("vipButton");
+
+    const status =
+        document.getElementById("status");
+
+
+    if(youtube && telegram){
+
+        vip.classList.remove("locked");
+
+        document
+            .getElementById("step3")
+            .classList.add("done");
+
+        status.innerHTML =
+            "✅ FF OLD SERVER UNLOCKED!<br>" +
+            "Ab neeche wale button par click karo 🔥";
+
+    }
+
+    else if(youtube){
+
+        status.innerHTML =
+            "✅ YouTube complete!<br>" +
+            "Ab Telegram join karo.";
+
+    }
+
+    else if(telegram){
+
+        status.innerHTML =
+            "✅ Telegram complete!<br>" +
+            "Ab YouTube subscribe karo.";
+
+    }
+
+}
+
+
+/* VIP TELEGRAM */
+
+function openVIP(){
+
+    if(youtube && telegram){
+
+        window.open(
+            "https://t.me/+yB01_EibX7U3ZDE1",
+            "_blank"
+        );
+
+    }else{
+
+        alert(
+            "🔒 Pehle YouTube aur Telegram dono complete karo!"
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
